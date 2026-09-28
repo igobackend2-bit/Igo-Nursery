@@ -9,8 +9,8 @@
 // either the admin or the storefront, needs to change at all.
 import { DEFAULT_SITE_CONTENT } from '../data/siteContent';
 
-const STORAGE_KEY = 'igo-site-content-v1';
-const DRAFT_STORAGE_KEY = 'igo-site-content-draft-v1';
+const STORAGE_KEY = 'igo-site-content-v2';
+const DRAFT_STORAGE_KEY = 'igo-site-content-draft-v2';
 
 export function getSiteContent() {
   try {
