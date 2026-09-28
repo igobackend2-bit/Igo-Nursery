@@ -389,11 +389,11 @@ export const DEFAULT_SITE_CONTENT = {
       { slug: 'gifting', label: 'Gifting', visible: true, order: 11, image: '/images/shop-by-category/gifting.png', exploreText: '' },
       { slug: 'garden-landscaping-lighting', label: 'Garden & Landscaping Lighting', visible: true, order: 12, image: '/images/shop-by-category/smart-garden-tech.png', exploreText: '' },
       { slug: 'hand-tools-lawn-equipment', label: 'Hand Tools & Lawn Equipment', visible: true, order: 13, image: '/images/shop-by-category/lawn-landscaping.png', exploreText: '' },
-      { slug: 'fertilizer-crop-protection', label: 'Fertilizer, Biofertilizer & Crop Protection', visible: true, order: 14, image: 'https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=800&auto=format&fit=crop', exploreText: '' },
-      { slug: 'cement-wooden-bonsai-planters', label: 'Cement, Wooden & Bonsai Planters', visible: true, order: 15, image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=800&auto=format&fit=crop', exploreText: '' },
+      { slug: 'fertilizer-crop-protection', label: 'Fertilizer, Biofertilizer & Crop Protection', visible: true, order: 14, image: '/images/shop-by-category/fertilizer-biofertilizer.png', exploreText: '' },
+      { slug: 'cement-wooden-bonsai-planters', label: 'Cement, Wooden & Bonsai Planters', visible: true, order: 15, image: '/images/shop-by-category/cement-wooden-bonsai-planters.png', exploreText: '' },
       { slug: 'decor-fairy-garden', label: 'Décor & Fairy-Garden Ornaments', visible: true, order: 16, image: '/images/shop-by-category/garden-decor.png', exploreText: '' },
       { slug: 'plant-support-trellis-staking', label: 'Plant Support, Trellis & Staking', visible: true, order: 17, image: '/images/shop-by-category/plant-support.png', exploreText: '' },
-      { slug: 'self-watering-railing-planters', label: 'Self-Watering & Railing Planters', visible: true, order: 18, image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=800&auto=format&fit=crop', exploreText: '' },
+      { slug: 'self-watering-railing-planters', label: 'Self-Watering & Railing Planters', visible: true, order: 18, image: '/images/shop-by-category/self-watering-railing-planters.png', exploreText: '' },
     ],
   },
   homeCorners: {
@@ -672,10 +672,10 @@ export const DEFAULT_SITE_CONTENT = {
     heading: 'Offers For You',
     subtitle: 'Amazing deals to make your garden beautiful',
     items: [
-      { id: 1, qty: 4, price: 799, note: 'WITH GROW POT', image: 'https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?q=80&w=500&auto=format&fit=crop' },
-      { id: 2, qty: 4, price: 999, note: 'WITH KRISH POT', image: 'https://images.unsplash.com/photo-1459156212016-c812468e2115?q=80&w=500&auto=format&fit=crop' },
-      { id: 3, qty: 4, price: 1199, note: 'WITH LAGOS POT', image: 'https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?q=80&w=500&auto=format&fit=crop' },
-      { id: 4, qty: 4, price: 999, note: 'WITH POT SET', image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=500&auto=format&fit=crop' },
+      { id: 1, qty: 4, price: 799, note: 'WITH GROW POT', image: '/images/offers/buy_any_4_799.png' },
+      { id: 2, qty: 4, price: 999, note: 'WITH KRISH POT', image: '/images/offers/buy_any_4_999.png' },
+      { id: 3, qty: 4, price: 1199, note: 'WITH LAGOS POT', image: '/images/offers/buy_any_4_1199.png' },
+      { id: 4, qty: 4, price: 999, note: 'WITH POT SET', image: '/images/offers/buy_any_4_999_1.png' },
     ]
   },
   gardenJournal: {

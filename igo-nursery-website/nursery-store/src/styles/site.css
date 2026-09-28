@@ -760,15 +760,19 @@ section {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 80px 0; /* Adding padding to show more of the natural edges */
+  padding: 50px 0 80px; /* Shifted to position the content higher up */
 }
 
 /* Centered section header with a small leaf either side */
 .shop-by-category-v2 .sbc-heading {
   position: relative;
   z-index: 2;
-  max-width: 680px;
-  margin: 0 auto 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto 56px;
   padding: 0 24px;
   text-align: center;
 }
@@ -776,33 +780,27 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   color: var(--sbc-green-dark);
   font-family: var(--font-sans);
   font-weight: 700;
-  margin: 0 0 12px;
+  font-size: 3.4rem;
+  margin: 0 0 14px;
+  padding: 0;
+  white-space: nowrap;
 }
 .shop-by-category-v2 .sbc-heading-leaf {
   flex: none;
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   color: var(--sbc-green-light);
 }
 .shop-by-category-v2 .sbc-heading-leaf-right { transform: scaleX(-1); }
 .shop-by-category-v2 .section-sub {
   color: #4b5c4b;
+  font-size: 1.35rem;
   margin: 0;
-}
-/* Nudged slightly right so it reads as centered under the heading text
-   rather than the (wider, leaf-flanked) heading row - same font size,
-   color and spacing, just a small horizontal offset. */
-.shop-by-category-v2 .sbc-sub-shift {
-  transform: translateX(14px);
-}
-@media (max-width: 720px) {
-  .shop-by-category-v2 .sbc-sub-shift {
-    transform: translateX(8px);
-  }
+  white-space: nowrap;
 }
 
 /* Circular category grid - equal-size circles, uniform gaps.
@@ -1312,6 +1310,23 @@ section {
 
 .just-in .product-card {
   border-color: rgba(27, 75, 54, 0.12);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.just-in .product-card-media {
+  flex-shrink: 0;
+}
+
+.just-in .product-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.just-in .product-card-body .btn-details {
+  margin-top: auto;
 }
 
 .just-in .product-card:hover {
@@ -6903,6 +6918,20 @@ section {
 }
 
 @media (max-width: 720px) {
+  .shop-by-category-v2 .sbc-heading h2 {
+    font-size: 2rem;
+    gap: 14px;
+    white-space: normal;
+  }
+  .shop-by-category-v2 .sbc-heading-leaf {
+    width: 28px;
+    height: 28px;
+  }
+  .shop-by-category-v2 .section-sub {
+    font-size: 1.05rem;
+    white-space: normal;
+  }
+
   .section-heading,
   .offers-grid,
   .category-grid,

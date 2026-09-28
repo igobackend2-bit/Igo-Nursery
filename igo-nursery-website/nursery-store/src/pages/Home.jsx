@@ -406,7 +406,7 @@ function CatIconBulb() {
 // botanical decoration - kept local to this section.
 function SbcLeaf({ className }) {
   return (
-    <svg className={className} viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <svg className={className} viewBox="3 -2 48 48" fill="none" aria-hidden="true">
       <path d="M40 6c0 18-10 30-26 32C12 22 22 10 40 6Z" fill="currentColor" opacity="0.9" />
       <path d="M40 6C28 14 20 24 14 38" stroke="#fff" strokeOpacity="0.55" strokeWidth="2" strokeLinecap="round" />
       <path d="M31 12c-6 2-10 6-13 12M35 20c-5 1-9 4-12 9" stroke="#fff" strokeOpacity="0.35" strokeWidth="1.6" strokeLinecap="round" />
@@ -455,11 +455,11 @@ const SHOP_CATEGORIES_V2 = [
   // umbrella categories exist in the live categories collection.
   { label: 'Garden & Landscaping Lighting', slug: 'garden-landscaping-lighting', to: '/category/garden-landscaping-lighting', Icon: CatIconBulb, image: '/images/shop-by-category/smart-garden-tech.png' },
   { label: 'Hand Tools & Lawn Equipment', slug: 'hand-tools-lawn-equipment', to: '/category/hand-tools-lawn-equipment', Icon: CatIconTools, image: '/images/shop-by-category/lawn-landscaping.png' },
-  { label: 'Fertilizer, Biofertilizer & Crop Protection', slug: 'fertilizer-crop-protection', to: '/category/fertilizer-crop-protection', Icon: CatIconCare, image: 'https://images.unsplash.com/photo-1502394202744-021cfbb17454?q=80&w=800&auto=format&fit=crop' },
-  { label: 'Cement, Wooden & Bonsai Planters', slug: 'cement-wooden-bonsai-planters', to: '/category/cement-wooden-bonsai-planters', Icon: CatIconPot, image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=800&auto=format&fit=crop' },
+  { label: 'Fertilizer, Biofertilizer & Crop Protection', slug: 'fertilizer-crop-protection', to: '/category/fertilizer-crop-protection', Icon: CatIconCare, image: '/images/shop-by-category/fertilizer-biofertilizer.png' },
+  { label: 'Cement, Wooden & Bonsai Planters', slug: 'cement-wooden-bonsai-planters', to: '/category/cement-wooden-bonsai-planters', Icon: CatIconPot, image: '/images/shop-by-category/cement-wooden-bonsai-planters.png' },
   { label: 'Décor & Fairy-Garden Ornaments', slug: 'decor-fairy-garden', to: '/category/decor-fairy-garden', Icon: CatIconDecor, image: '/images/shop-by-category/garden-decor.png' },
   { label: 'Plant Support, Trellis & Staking', slug: 'plant-support-trellis-staking', to: '/category/plant-support-trellis-staking', Icon: CatIconSupport, image: '/images/shop-by-category/plant-support.png' },
-  { label: 'Self-Watering & Railing Planters', slug: 'self-watering-railing-planters', to: '/category/self-watering-railing-planters', Icon: CatIconPot, image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=800&auto=format&fit=crop' },
+  { label: 'Self-Watering & Railing Planters', slug: 'self-watering-railing-planters', to: '/category/self-watering-railing-planters', Icon: CatIconPot, image: '/images/shop-by-category/self-watering-railing-planters.png' },
 ];
 
 // A handful of the supplied photos (see /public/images/shop-by-category/)
@@ -477,6 +477,7 @@ const PRECOMPOSED_TILE_IMAGES = new Set([
   '/images/shop-by-category/garden-decor.png',
   '/images/shop-by-category/decorative-stones-mulch.png',
   '/images/shop-by-category/gifting.png',
+  '/images/shop-by-category/cement-wooden-bonsai-planters.png',
 ]);
 
 function ShopByCategory() {
@@ -532,7 +533,7 @@ function ShopByCategory() {
           <SbcLeaf className="sbc-heading-leaf sbc-heading-leaf-right" />
         </h2>
         <EditableElement sectionKey="shopByCategory" field="subtitle" type="text" label="Subtitle">
-          <p className="section-sub sbc-sub-shift">{subtitle}</p>
+          <p className="section-sub">{subtitle}</p>
         </EditableElement>
       </div>
 
