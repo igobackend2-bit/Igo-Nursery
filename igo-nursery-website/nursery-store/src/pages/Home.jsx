@@ -477,7 +477,6 @@ const PRECOMPOSED_TILE_IMAGES = new Set([
   '/images/shop-by-category/garden-decor.png',
   '/images/shop-by-category/decorative-stones-mulch.png',
   '/images/shop-by-category/gifting.png',
-  '/images/shop-by-category/cement-wooden-bonsai-planters.png',
 ]);
 
 function ShopByCategory() {
