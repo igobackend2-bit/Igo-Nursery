@@ -30,25 +30,9 @@ RUN npm run build
 # ---------- Stage 2: serve the built site with nginx on port 3000 ----------
 FROM nginx:1.27-alpine
 
-# Single-page-app config: every route falls back to index.html
-RUN printf '%s\n' \
-  'server {' \
-  '  listen 3000;' \
-  '  server_name _;' \
-  '  root /usr/share/nginx/html;' \
-  '  index index.html;' \
-  '  server_tokens off;' \
-  '  gzip on;' \
-  '  gzip_types text/css application/javascript application/json image/svg+xml text/plain;' \
-  '  location /assets/ {' \
-  '    expires 1y;' \
-  '    add_header Cache-Control "public, immutable";' \
-  '    try_files $uri =404;' \
-  '  }' \
-  '  location / {' \
-  '    try_files $uri $uri/ /index.html;' \
-  '  }' \
-  '}' > /etc/nginx/conf.d/default.conf
+# nginx config (see nginx.conf): SPA routing, real 404s, compression, caching,
+# security headers, noindex header for private pages
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=build /app/dist /usr/share/nginx/html
 

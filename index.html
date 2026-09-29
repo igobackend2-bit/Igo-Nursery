@@ -138,6 +138,41 @@
           }
         }
 
+        function setLd(id, obj) {
+          var el = document.getElementById(id);
+          if (!obj) { if (el) el.remove(); return; }
+          if (!el) { el = document.createElement('script'); el.type = 'application/ld+json'; el.id = id; document.head.appendChild(el); }
+          var json = JSON.stringify(obj);
+          if (el.textContent !== json) el.textContent = json;
+        }
+        function crumbs(path) {
+          var m, items = [['Home', BASE + '/']];
+          if ((m = path.match(/^\/category\/([^/]+)$/)) && CATS[m[1]]) items.push([CATS[m[1]][0], BASE + path]);
+          else if (/^\/product\/[^/]+$/.test(path)) {
+            var h1 = document.querySelector('main h1, h1');
+            if (!h1 || !h1.textContent.trim()) return null;
+            items.push([h1.textContent.trim(), BASE + path]);
+          } else if (PAGES[path] && path !== '/') items.push([PAGES[path][0].split(' | ')[0].split(' – ')[0], BASE + path]);
+          else return null;
+          return {
+            '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+            itemListElement: items.map(function (it, i) { return { '@type': 'ListItem', position: i + 1, name: it[0], item: it[1] }; })
+          };
+        }
+        var SERVICES = {
+          '/garden-services': 'Garden Services',
+          '/landscaping': 'Landscaping Services'
+        };
+        function service(path) {
+          if (!SERVICES[path]) return null;
+          return {
+            '@context': 'https://schema.org', '@type': 'Service', name: SERVICES[path],
+            serviceType: SERVICES[path], url: BASE + path,
+            provider: { '@id': BASE + '/#business' },
+            areaServed: { '@type': 'City', name: 'Chennai' }
+          };
+        }
+
         var lastPage = '';
         function gaView(path) {
           if (!GA_ID || typeof window.gtag !== 'function' || path === lastPage) return;
@@ -146,7 +181,7 @@
         }
 
         var timer = null;
-        function run() { var p = meta(); fillAlt(); gaView(p); }
+        function run() { var p = meta(); fillAlt(); setLd('ld-breadcrumb', crumbs(p)); setLd('ld-service', service(p)); gaView(p); }
         function schedule() { clearTimeout(timer); timer = setTimeout(run, 250); }
 
         ['pushState', 'replaceState'].forEach(function (fn) {
