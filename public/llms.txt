@@ -1,0 +1,56 @@
+# IGO Nursery
+
+> IGO Nursery is an AgriTech plant nursery based in Muttukadu, Chennai, Tamil Nadu, India. It grows plants under IoT-monitored conditions and sells plants, seeds, pots and planters, plant-care products, gardening tools and gifts online, with delivery across India.
+
+Website: https://www.igonursery.com/
+Location: ECR Road, Muttukadu, Chennai, Tamil Nadu 603112, India
+Phone: +91 73973 86189
+Email: ceojohnyesudas@gmail.com
+
+## What we offer
+- Plants: indoor, outdoor, flowering, fruit, succulents, cactus, palms, bonsai, orchids, herbs, medicinal and many more
+- Seeds: vegetable, flower, herb, fruit, microgreens, lawn grass and more
+- Pots and planters, plant-care products (fertilisers, soil, pest control), gardening tools
+- Garden services and landscaping, gifting and corporate gifts
+- Plant Finder: a guided tool to pick plants by light, space and maintenance
+
+## Main pages
+- [Home](https://www.igonursery.com/)
+- [Plants](https://www.igonursery.com/plants)
+- [Seeds](https://www.igonursery.com/seeds)
+- [Pots & Planters](https://www.igonursery.com/pots-planters)
+- [Plant Care](https://www.igonursery.com/plant-care)
+- [Offers](https://www.igonursery.com/offers)
+- [Just In (new arrivals)](https://www.igonursery.com/just-in)
+- [Garden Services](https://www.igonursery.com/garden-services)
+- [Landscaping](https://www.igonursery.com/landscaping)
+- [Plant Finder](https://www.igonursery.com/plant-finder)
+- [Gifting](https://www.igonursery.com/gifting)
+- [Corporate Gifts](https://www.igonursery.com/corporate-gifts)
+- [Blog / Garden Journal](https://www.igonursery.com/blog)
+- [About Us](https://www.igonursery.com/about)
+- [Contact Us](https://www.igonursery.com/contact)
+- [Locate Our Store](https://www.igonursery.com/locate-store)
+
+## Popular categories
+- [Indoor Plants](https://www.igonursery.com/category/indoor-plants)
+- [Outdoor Plants](https://www.igonursery.com/category/outdoor-plants)
+- [Succulents](https://www.igonursery.com/category/succulents)
+- [Fruit Plants](https://www.igonursery.com/category/fruit-plants)
+- [Bonsai](https://www.igonursery.com/category/bonsai)
+- [Orchids](https://www.igonursery.com/category/orchids)
+- [Herbs](https://www.igonursery.com/category/herbs)
+- [Vegetable Seeds](https://www.igonursery.com/category/vegetable-seeds)
+- [Flower Seeds](https://www.igonursery.com/category/flower-seeds)
+- [Terracotta Pots](https://www.igonursery.com/category/terracotta-pots)
+
+## Delivery and policies
+- Delivery across India; same-day delivery is available within a 30 km radius of the nursery.
+- Cash on Delivery is available for Chennai only; other locations are prepaid.
+- Damaged plants are replaced when reported with photo proof within 24-48 hours of delivery (no refunds).
+- [Shipping policy](https://www.igonursery.com/shipping-policy)
+- [Privacy policy](https://www.igonursery.com/privacy-policy)
+- [Terms & conditions](https://www.igonursery.com/terms)
+
+## Machine-readable
+- [Sitemap](https://www.igonursery.com/sitemap.xml)
