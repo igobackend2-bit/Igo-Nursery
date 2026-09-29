@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.gitignore
+*.log
+*.zip
+objects.txt
+images_backup
+Garden_Images_Separate
+igo-nursery-website
+New folder
+_claude_scratch_*.py
