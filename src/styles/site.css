@@ -248,6 +248,11 @@ section {
   }
 }
 
+/* Phone-only menu button (shown inside the 720px block below). */
+.mobile-menu-btn {
+  display: none;
+}
+
 /* Mobile / touch: the nav wraps instead of horizontally scrolling, and an
    opened dropdown flows inline below its category (full width, no
    absolute positioning to be clipped) - toggled by tap via `.is-open`. */
@@ -260,6 +265,94 @@ section {
     min-width: 0;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  /* Compact phone header: logo on the left, menu button + account /
+     wishlist / cart on the right, search + language on the next row, and
+     the category menu collapsed behind the menu button. */
+  .primary-header {
+    gap: 6px 4px;
+    padding: 4px 12px;
+  }
+  .user-actions {
+    display: contents;
+  }
+  .logo-container {
+    order: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 6px;
+    font-size: 1rem;
+  }
+  .logo-container .logo-icon {
+    height: 52px;
+    flex-shrink: 0;
+  }
+  .logo-container .logo-text-animate {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+  .user-actions > * {
+    order: 2;
+  }
+  .user-actions .action-icon {
+    width: 38px;
+    height: 40px;
+  }
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 10px;
+    background: #f4f1ea;
+    color: #1b4b36;
+    cursor: pointer;
+    padding: 0;
+  }
+  .search-bar {
+    order: 3;
+    flex: 1 1 200px;
+    width: auto;
+    min-width: 0;
+    padding: 6px 14px;
+  }
+  .user-actions > .language-switcher-select {
+    order: 4;
+    flex: 0 0 auto;
+    width: auto;
+    height: 40px;
+  }
+  .secondary-header {
+    display: none;
+  }
+  body.mobile-menu-open .secondary-header {
+    display: block;
+    padding: 2px 16px 8px;
+  }
+  .secondary-header .nav-links {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    row-gap: 0;
+    column-gap: 0;
+  }
+  .secondary-header .nav-links > li {
+    width: 100%;
+    padding-bottom: 0;
+    border-bottom: 1px solid #eee;
+  }
+  .secondary-header .nav-links > li > a {
+    display: block;
+    padding: 12px 0;
+  }
+  .secondary-header .nav-links > li:last-child {
+    border-bottom: 0;
   }
   .dropdown-menu,
   .dropdown-menu-mega {
@@ -7093,5 +7186,62 @@ section {
   .stats-strip-title,
   .stats-strip-subtitle {
     white-space: normal;
+  }
+}
+
+/* ============ Phone: compact hero + swipeable rows ============
+   On phones the long home-page card lists (categories, best sellers, just
+   in, offers, plants-by-room) become horizontal swipe rows instead of one
+   very tall stack, and the hero is shorter - similar to common mobile
+   storefronts. Desktop and tablet are unchanged. */
+@media (max-width: 720px) {
+  .site-main .hero-section {
+    padding: 28px 16px;
+    min-height: auto;
+  }
+  .site-main .hero-title {
+    font-size: 2.1rem;
+  }
+  .site-main .hero-buttons {
+    gap: 10px;
+  }
+
+  .shop-by-category .category-grid,
+  .best-sellers .product-grid,
+  .just-in .just-in-grid,
+  .offers-section-premium .offers-premium-grid,
+  .home-corners .home-corners-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding: 0 16px 12px;
+    scroll-padding: 0 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .shop-by-category .category-grid::-webkit-scrollbar,
+  .best-sellers .product-grid::-webkit-scrollbar,
+  .just-in .just-in-grid::-webkit-scrollbar,
+  .offers-section-premium .offers-premium-grid::-webkit-scrollbar,
+  .home-corners .home-corners-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .shop-by-category .category-grid > *,
+  .best-sellers .product-grid > *,
+  .just-in .just-in-grid > *,
+  .offers-section-premium .offers-premium-grid > *,
+  .home-corners .home-corners-grid > * {
+    flex: 0 0 78%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .shop-by-category .category-grid > * {
+    flex-basis: 48%;
+  }
+  .best-sellers .product-grid > *,
+  .just-in .just-in-grid > * {
+    flex-basis: 62%;
   }
 }

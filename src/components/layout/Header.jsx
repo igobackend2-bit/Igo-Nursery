@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '../../context/StoreContext';
 import { useAuth } from '../../context/AuthContext';
@@ -21,6 +21,16 @@ const VOICE_LOCALES = { en: 'en-IN', ta: 'ta-IN', hi: 'hi-IN', ml: 'ml-IN', te: 
 
 function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
+  // Phone-only menu button: opens/closes the category menu (NavBar) via a
+  // body class, so no state has to be shared between Header and NavBar.
+  const [menuOpen, setMenuOpen] = useState(false);
+  const hasMenu = location.pathname !== '/account';
+  useEffect(() => setMenuOpen(false), [location.pathname]);
+  useEffect(() => {
+    document.body.classList.toggle('mobile-menu-open', menuOpen);
+    return () => document.body.classList.remove('mobile-menu-open');
+  }, [menuOpen]);
   const { cartCount, wishlistCount } = useStore();
   const { isAuthenticated } = useAuth();
   const { language, t } = useLanguage();
@@ -126,6 +136,21 @@ function Header() {
       </form>
 
       <div className="user-actions">
+        {hasMenu && (
+          <button
+            type="button"
+            className="mobile-menu-btn"
+            aria-label="Menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round">
+              {menuOpen
+                ? <><line x1="5" y1="5" x2="19" y2="19" /><line x1="19" y1="5" x2="5" y2="19" /></>
+                : <><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></>}
+            </svg>
+          </button>
+        )}
         <LanguageSwitcher />
         <NotificationBell />
         <div className="action-icon" onClick={() => navigate(isAuthenticated ? '/account' : '/login')} role="button" tabIndex={0} title={t('header.account')}>
