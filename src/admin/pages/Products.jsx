@@ -278,18 +278,7 @@ function AdminProducts() {
         </div>
       </div>
 
-      <div className="admin-mock-banner">
-        Products &amp; categories are Firestore-backed - edits here save permanently. Product images/gallery/video
-        still upload as data URLs (Firebase Storage isn't enabled yet).
-      </div>
-      <div className="admin-mock-banner">
-        <strong>Sync Built-in Translations</strong> fills in the Tamil/Hindi/Malayalam/Telugu/Kannada product
-        <em> name</em> for every product that has a matching entry in the codebase's built-in translation list -
-        no manual per-product typing needed. It never overwrites a translation you've already entered by hand for
-        a product, and never touches price/stock/description/anything else. Safe to click again any time more
-        built-in translations are added.
-        {syncResult && <div style={{ marginTop: 8, fontWeight: 600 }}>{syncResult}</div>}
-      </div>
+      {syncResult && <div className="admin-mock-banner" style={{ fontWeight: 600 }}>{syncResult}</div>}
 
       <ComboOfferPanel products={products} comboOffer={comboOffer} setComboOffer={setComboOffer} />
 
